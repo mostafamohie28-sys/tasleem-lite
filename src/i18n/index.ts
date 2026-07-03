@@ -3,9 +3,6 @@ import { initReactI18next } from 'react-i18next'
 
 import { resources } from '@/i18n/resources'
 
-export const supportedLanguages = ['ar', 'en'] as const
-export type SupportedLanguage = (typeof supportedLanguages)[number]
-
 export function getLanguageDirection(language: string) {
   return language.startsWith('ar') ? 'rtl' : 'ltr'
 }
