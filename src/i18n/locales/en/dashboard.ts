@@ -1,6 +1,7 @@
 export const enDashboard = {
   nav: {
     dashboard: 'Dashboard',
+    company: 'Company',
     submissions: 'Submissions',
     shipments: 'Shipments',
     drivers: 'Drivers',

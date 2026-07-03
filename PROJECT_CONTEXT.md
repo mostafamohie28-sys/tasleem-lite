@@ -57,6 +57,8 @@ Completed:
 * Dashboard route protection
 * Logout flow
 * Project cleanup completed
+* Company Profile UI module
+* Company Settings UI module
 
 Not Started:
 
@@ -110,8 +112,8 @@ Future modules:
 
 ## Current Sprint
 
-Sprint 1:
-Foundation, UI, Branding, Frontend Auth, and Internationalization
+Sprint 2:
+Company Profile and Company Settings UI
 
 Status:
 Completed
@@ -122,5 +124,6 @@ Core ERP data modeling and module planning
 Project Status:
 Frontend foundation approved. The app currently has a polished branded UI,
 frontend-only localStorage authentication, Arabic / English translations,
-automatic RTL / LTR document direction, and cleaned project structure. No
-backend, database, API, or production business logic has been implemented yet.
+automatic RTL / LTR document direction, cleaned project structure, and a
+frontend-only Company module UI. No backend, database, API, or production
+business logic has been implemented yet.

@@ -1,5 +1,7 @@
+import type React from 'react'
 import {
   Bell,
+  Building2,
   ClipboardList,
   Home,
   Menu,
@@ -20,19 +22,28 @@ import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 
 const navItems = [
-  { labelKey: 'nav.dashboard', icon: Home, active: true },
-  { labelKey: 'nav.submissions', icon: ClipboardList },
-  { labelKey: 'nav.shipments', icon: Package },
-  { labelKey: 'nav.drivers', icon: Truck },
-  { labelKey: 'nav.customers', icon: Users },
-  { labelKey: 'nav.settings', icon: Settings },
+  { labelKey: 'nav.dashboard', path: '/dashboard', icon: Home },
+  { labelKey: 'nav.company', path: '/company', icon: Building2 },
+  { labelKey: 'nav.submissions', path: '/submissions', icon: ClipboardList },
+  { labelKey: 'nav.shipments', path: '/shipments', icon: Package },
+  { labelKey: 'nav.drivers', path: '/drivers', icon: Truck },
+  { labelKey: 'nav.customers', path: '/customers', icon: Users },
+  { labelKey: 'nav.settings', path: '/settings', icon: Settings },
 ]
 
 type DashboardLayoutProps = {
+  children?: React.ReactNode
+  currentPath: string
   onLogout: () => void
+  onNavigate: (path: string) => void
 }
 
-export function DashboardLayout({ onLogout }: DashboardLayoutProps) {
+export function DashboardLayout({
+  children,
+  currentPath,
+  onLogout,
+  onNavigate,
+}: DashboardLayoutProps) {
   const { t } = useTranslation(['common', 'dashboard'])
 
   return (
@@ -50,8 +61,13 @@ export function DashboardLayout({ onLogout }: DashboardLayoutProps) {
             <Button
               className="h-10 w-full justify-start gap-3 text-white/78 hover:bg-white/10 hover:text-white data-[variant=secondary]:bg-primary data-[variant=secondary]:text-primary-foreground data-[variant=secondary]:shadow-lg data-[variant=secondary]:shadow-orange-500/20"
               key={item.labelKey}
+              onClick={() => {
+                if (item.path === '/dashboard' || item.path === '/company') {
+                  onNavigate(item.path)
+                }
+              }}
               type="button"
-              variant={item.active ? 'secondary' : 'ghost'}
+              variant={currentPath === item.path ? 'secondary' : 'ghost'}
             >
               <item.icon className="size-4" aria-hidden="true" />
               {t(`dashboard:${item.labelKey}`)}
@@ -118,7 +134,7 @@ export function DashboardLayout({ onLogout }: DashboardLayoutProps) {
           </div>
         </header>
 
-        <DashboardContent />
+        {children ?? <DashboardContent />}
       </div>
     </div>
   )

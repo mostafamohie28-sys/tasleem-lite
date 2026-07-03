@@ -1,6 +1,30 @@
 # Tasleem Lite Changelog
 
-## Current Frontend Foundation
+## Sprint 2: Company Module UI
+
+### Added
+
+- Company sidebar item.
+- Protected `/company` frontend route.
+- Company Profile and Company Settings UI.
+- Company Information section.
+- Contact Information section.
+- Address section.
+- Business Settings section.
+- Branding section with logo upload placeholder and primary color preview.
+- Disabled Save placeholder button.
+- Reset placeholder button.
+- Arabic and English translations for the Company module.
+
+### Notes
+
+- UI only.
+- No backend was added.
+- No database was added.
+- No API was added.
+- No business logic was added.
+
+## Sprint 1: Frontend Foundation
 
 ### Added
 

@@ -1,6 +1,7 @@
-export const arDashboard = {
+﻿export const arDashboard = {
   nav: {
     dashboard: 'لوحة التحكم',
+    company: 'الشركة',
     submissions: 'الطلبات',
     shipments: 'الشحنات',
     drivers: 'المندوبون',
@@ -57,3 +58,4 @@ export const arDashboard = {
     openExceptions: 'الاستثناءات المفتوحة',
   },
 }
+

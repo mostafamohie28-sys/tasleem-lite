@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
+import { CompanyPreview } from '@/app/company-preview'
 import { DashboardPreview } from '@/app/dashboard-preview'
 import { getLanguageDirection } from '@/i18n'
 import {
@@ -10,13 +11,15 @@ import {
 } from '@/lib/auth'
 import { LoginPage } from '@/pages/login-page'
 
+const protectedPaths = ['/dashboard', '/company']
+
 function App() {
   const { i18n } = useTranslation()
   const [authenticated, setAuthenticated] = useState(isAuthenticated)
   const [currentPath, setCurrentPath] = useState(() => {
     const path = window.location.pathname
 
-    if (path === '/dashboard' && !isAuthenticated()) {
+    if (protectedPaths.includes(path) && !isAuthenticated()) {
       window.history.replaceState(null, '', '/')
       return '/'
     }
@@ -29,7 +32,7 @@ function App() {
       const loggedIn = isAuthenticated()
       const path = window.location.pathname
 
-      if (path === '/dashboard' && !loggedIn) {
+      if (protectedPaths.includes(path) && !loggedIn) {
         window.history.replaceState(null, '', '/')
         setCurrentPath('/')
         setAuthenticated(false)
@@ -74,7 +77,11 @@ function App() {
   }
 
   if (currentPath === '/dashboard' && authenticated) {
-    return <DashboardPreview onLogout={handleLogout} />
+    return <DashboardPreview onLogout={handleLogout} onNavigate={navigate} />
+  }
+
+  if (currentPath === '/company' && authenticated) {
+    return <CompanyPreview onLogout={handleLogout} onNavigate={navigate} />
   }
 
   return <LoginPage onLogin={handleLogin} />
