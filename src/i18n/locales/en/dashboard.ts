@@ -1,0 +1,59 @@
+export const enDashboard = {
+  nav: {
+    dashboard: 'Dashboard',
+    submissions: 'Submissions',
+    shipments: 'Shipments',
+    drivers: 'Drivers',
+    customers: 'Customers',
+    settings: 'Settings',
+    openNavigation: 'Open navigation',
+    notifications: 'Notifications',
+    logout: 'Logout',
+    search: 'Search shipments, drivers, customers',
+  },
+  sidebar: {
+    routeReadiness: 'Route readiness',
+    routeReadinessDescription:
+      'Dispatch queues are prepared for the next internal shipping window.',
+  },
+  overview: {
+    label: 'Overview',
+    title: 'Delivery control center',
+    description:
+      'Static ERP dashboard preview for dispatch monitoring, shipment queues, and route operations.',
+    branchLabel: 'Branch',
+    branchValue: 'Cairo Hub',
+    shiftLabel: 'Shift',
+    shiftValue: 'Morning',
+  },
+  stats: {
+    readyForHandoff: 'Ready for handoff',
+    outForDelivery: 'Out for delivery',
+    activeRoutes: 'Active routes',
+    awaitingReview: 'Awaiting review',
+    change: '4.8%',
+  },
+  submissions: {
+    title: 'Recent submissions',
+    description: 'Static sample rows for the initial dashboard layout.',
+    livePreview: 'Live preview',
+    rows: {
+      northStarPharmacy: 'North Star Pharmacy',
+      greenMarket: 'Green Market',
+      alNoorClinic: 'Al Noor Clinic',
+      nasrCity: 'Nasr City',
+      maadi: 'Maadi',
+      heliopolis: 'Heliopolis',
+      ready: 'Ready',
+      inTransit: 'In transit',
+      pending: 'Pending',
+    },
+  },
+  today: {
+    title: 'Today',
+    onTimeRate: 'On-time handoff rate',
+    dispatchWindow: 'Dispatch window',
+    operatorsOnline: 'Operators online',
+    openExceptions: 'Open exceptions',
+  },
+}

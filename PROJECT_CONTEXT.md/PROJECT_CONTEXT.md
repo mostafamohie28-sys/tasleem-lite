@@ -15,6 +15,8 @@ The goal is to build a fast, professional, scalable system that can later become
 * TypeScript
 * Tailwind CSS
 * shadcn/ui
+* react-i18next
+* i18next
 
 ---
 
@@ -49,6 +51,8 @@ Completed:
 * Responsive layout
 * Build passing
 * Lint passing
+* Arabic / English internationalization
+* Automatic RTL / LTR layout direction
 
 Not Started:
 
@@ -66,6 +70,9 @@ Not Started:
 * Always inspect the current project before changing anything.
 * Keep the code modular.
 * Reuse components whenever possible.
+* Keep all user-facing UI text in translation files.
+* Arabic is the default language.
+* Support RTL for Arabic and LTR for English.
 * Do not implement business logic unless requested.
 * Stop after each milestone and wait for approval.
 

@@ -10,20 +10,22 @@ import {
   Users,
   LogOut,
 } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 import { BrandLogo } from '@/components/brand/brand-logo'
 import { DashboardContent } from '@/components/dashboard/dashboard-content'
+import { LanguageSwitcher } from '@/components/language/language-switcher'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 
 const navItems = [
-  { label: 'Dashboard', icon: Home, active: true },
-  { label: 'Submissions', icon: ClipboardList },
-  { label: 'Shipments', icon: Package },
-  { label: 'Drivers', icon: Truck },
-  { label: 'Customers', icon: Users },
-  { label: 'Settings', icon: Settings },
+  { labelKey: 'nav.dashboard', icon: Home, active: true },
+  { labelKey: 'nav.submissions', icon: ClipboardList },
+  { labelKey: 'nav.shipments', icon: Package },
+  { labelKey: 'nav.drivers', icon: Truck },
+  { labelKey: 'nav.customers', icon: Users },
+  { labelKey: 'nav.settings', icon: Settings },
 ]
 
 type DashboardLayoutProps = {
@@ -31,6 +33,8 @@ type DashboardLayoutProps = {
 }
 
 export function DashboardLayout({ onLogout }: DashboardLayoutProps) {
+  const { t } = useTranslation(['common', 'dashboard'])
+
   return (
     <div className="min-h-screen bg-background text-foreground lg:grid lg:grid-cols-[280px_minmax(0,1fr)]">
       <aside className="hidden border-r border-sidebar-border bg-sidebar text-sidebar-foreground shadow-2xl shadow-blue-950/15 lg:flex lg:flex-col">
@@ -45,19 +49,21 @@ export function DashboardLayout({ onLogout }: DashboardLayoutProps) {
           {navItems.map((item) => (
             <Button
               className="h-10 w-full justify-start gap-3 text-white/78 hover:bg-white/10 hover:text-white data-[variant=secondary]:bg-primary data-[variant=secondary]:text-primary-foreground data-[variant=secondary]:shadow-lg data-[variant=secondary]:shadow-orange-500/20"
-              key={item.label}
+              key={item.labelKey}
               type="button"
               variant={item.active ? 'secondary' : 'ghost'}
             >
               <item.icon className="size-4" aria-hidden="true" />
-              {item.label}
+              {t(`dashboard:${item.labelKey}`)}
             </Button>
           ))}
         </nav>
         <div className="m-4 rounded-lg border border-white/10 bg-white/[0.06] p-4">
-          <p className="text-sm font-semibold text-white">Route readiness</p>
+          <p className="text-sm font-semibold text-white">
+            {t('dashboard:sidebar.routeReadiness')}
+          </p>
           <p className="mt-1 text-xs leading-5 text-white/60">
-            Dispatch queues are prepared for the next internal shipping window.
+            {t('dashboard:sidebar.routeReadinessDescription')}
           </p>
           <div className="mt-4 h-2 overflow-hidden rounded-full bg-white/10">
             <div className="h-full w-[76%] rounded-full bg-primary" />
@@ -70,19 +76,20 @@ export function DashboardLayout({ onLogout }: DashboardLayoutProps) {
           <div className="flex min-w-0 items-center gap-3">
             <Button className="lg:hidden" size="icon" type="button" variant="ghost">
               <Menu className="size-5" aria-hidden="true" />
-              <span className="sr-only">Open navigation</span>
+              <span className="sr-only">{t('dashboard:nav.openNavigation')}</span>
             </Button>
             <BrandLogo className="lg:hidden" showText={false} />
             <div className="hidden min-w-[280px] items-center gap-2 rounded-lg border bg-muted/70 px-3 py-2.5 text-sm text-muted-foreground shadow-inner sm:flex lg:min-w-[380px]">
               <Search className="size-4" aria-hidden="true" />
-              <span>Search shipments, drivers, customers</span>
+              <span>{t('dashboard:nav.search')}</span>
             </div>
           </div>
 
           <div className="flex items-center gap-2">
+            <LanguageSwitcher />
             <Button className="border bg-white shadow-sm" size="icon" type="button" variant="ghost">
               <Bell className="size-5" aria-hidden="true" />
-              <span className="sr-only">Notifications</span>
+              <span className="sr-only">{t('dashboard:nav.notifications')}</span>
             </Button>
             <Button
               className="hidden border bg-white shadow-sm sm:inline-flex"
@@ -91,7 +98,7 @@ export function DashboardLayout({ onLogout }: DashboardLayoutProps) {
               onClick={onLogout}
             >
               <LogOut className="size-4" aria-hidden="true" />
-              Logout
+              {t('dashboard:nav.logout')}
             </Button>
             <Button
               className="border bg-white shadow-sm sm:hidden"
@@ -101,10 +108,12 @@ export function DashboardLayout({ onLogout }: DashboardLayoutProps) {
               onClick={onLogout}
             >
               <LogOut className="size-5" aria-hidden="true" />
-              <span className="sr-only">Logout</span>
+              <span className="sr-only">{t('dashboard:nav.logout')}</span>
             </Button>
             <Avatar className="size-10 border shadow-sm">
-              <AvatarFallback className="bg-[#082a59] text-white">TL</AvatarFallback>
+              <AvatarFallback className="bg-[#082a59] text-white">
+                {t('common:brand.initials')}
+              </AvatarFallback>
             </Avatar>
           </div>
         </header>

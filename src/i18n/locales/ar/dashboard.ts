@@ -1,0 +1,59 @@
+export const arDashboard = {
+  nav: {
+    dashboard: 'لوحة التحكم',
+    submissions: 'الطلبات',
+    shipments: 'الشحنات',
+    drivers: 'المندوبون',
+    customers: 'العملاء',
+    settings: 'الإعدادات',
+    openNavigation: 'فتح القائمة',
+    notifications: 'الإشعارات',
+    logout: 'تسجيل الخروج',
+    search: 'ابحث عن الشحنات أو المندوبين أو العملاء',
+  },
+  sidebar: {
+    routeReadiness: 'جاهزية المسارات',
+    routeReadinessDescription:
+      'قوائم الإرسال جاهزة لنافذة الشحن الداخلي التالية.',
+  },
+  overview: {
+    label: 'نظرة عامة',
+    title: 'مركز التحكم في التوصيل',
+    description:
+      'معاينة ثابتة للوحة ERP لمتابعة الإرسال وقوائم الشحنات وعمليات المسارات.',
+    branchLabel: 'الفرع',
+    branchValue: 'مركز القاهرة',
+    shiftLabel: 'الوردية',
+    shiftValue: 'الصباحية',
+  },
+  stats: {
+    readyForHandoff: 'جاهزة للتسليم',
+    outForDelivery: 'قيد التوصيل',
+    activeRoutes: 'مسارات نشطة',
+    awaitingReview: 'بانتظار المراجعة',
+    change: '4.8%',
+  },
+  submissions: {
+    title: 'آخر الطلبات',
+    description: 'صفوف تجريبية ثابتة لتخطيط لوحة التحكم الأولي.',
+    livePreview: 'معاينة مباشرة',
+    rows: {
+      northStarPharmacy: 'صيدلية نورث ستار',
+      greenMarket: 'جرين ماركت',
+      alNoorClinic: 'عيادة النور',
+      nasrCity: 'مدينة نصر',
+      maadi: 'المعادي',
+      heliopolis: 'مصر الجديدة',
+      ready: 'جاهزة',
+      inTransit: 'قيد النقل',
+      pending: 'معلقة',
+    },
+  },
+  today: {
+    title: 'اليوم',
+    onTimeRate: 'معدل التسليم في الوقت المحدد',
+    dispatchWindow: 'نافذة الإرسال',
+    operatorsOnline: 'المشغلون المتصلون',
+    openExceptions: 'الاستثناءات المفتوحة',
+  },
+}

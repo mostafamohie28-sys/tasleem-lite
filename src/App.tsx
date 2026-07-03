@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import { DashboardPreview } from '@/app/dashboard-preview'
+import { getLanguageDirection } from '@/i18n'
 import {
   isAuthenticated,
   login as loginUser,
@@ -9,6 +11,7 @@ import {
 import { LoginPage } from '@/pages/login-page'
 
 function App() {
+  const { i18n } = useTranslation()
   const [authenticated, setAuthenticated] = useState(isAuthenticated)
   const [currentPath, setCurrentPath] = useState(() => {
     const path = window.location.pathname
@@ -43,6 +46,11 @@ function App() {
       window.removeEventListener('popstate', handlePopState)
     }
   }, [])
+
+  useEffect(() => {
+    document.documentElement.lang = i18n.language
+    document.documentElement.dir = getLanguageDirection(i18n.language)
+  }, [i18n.language])
 
   const navigate = (path: string) => {
     window.history.pushState(null, '', path)
