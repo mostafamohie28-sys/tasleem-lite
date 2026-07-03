@@ -1,0 +1,116 @@
+import {
+  Bell,
+  ClipboardList,
+  Home,
+  Menu,
+  Package,
+  Search,
+  Settings,
+  Truck,
+  Users,
+  LogOut,
+} from 'lucide-react'
+
+import { BrandLogo } from '@/components/brand/brand-logo'
+import { DashboardContent } from '@/components/dashboard/dashboard-content'
+import { Avatar, AvatarFallback } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
+import { Separator } from '@/components/ui/separator'
+
+const navItems = [
+  { label: 'Dashboard', icon: Home, active: true },
+  { label: 'Submissions', icon: ClipboardList },
+  { label: 'Shipments', icon: Package },
+  { label: 'Drivers', icon: Truck },
+  { label: 'Customers', icon: Users },
+  { label: 'Settings', icon: Settings },
+]
+
+type DashboardLayoutProps = {
+  onLogout: () => void
+}
+
+export function DashboardLayout({ onLogout }: DashboardLayoutProps) {
+  return (
+    <div className="min-h-screen bg-background text-foreground lg:grid lg:grid-cols-[280px_minmax(0,1fr)]">
+      <aside className="hidden border-r border-sidebar-border bg-sidebar text-sidebar-foreground shadow-2xl shadow-blue-950/15 lg:flex lg:flex-col">
+        <div className="flex h-20 items-center px-5">
+          <BrandLogo
+            className="text-sidebar-foreground"
+            textClassName="[&_p:last-child]:text-white/60"
+          />
+        </div>
+        <Separator />
+        <nav className="flex-1 space-y-1.5 p-4">
+          {navItems.map((item) => (
+            <Button
+              className="h-10 w-full justify-start gap-3 text-white/78 hover:bg-white/10 hover:text-white data-[variant=secondary]:bg-primary data-[variant=secondary]:text-primary-foreground data-[variant=secondary]:shadow-lg data-[variant=secondary]:shadow-orange-500/20"
+              key={item.label}
+              type="button"
+              variant={item.active ? 'secondary' : 'ghost'}
+            >
+              <item.icon className="size-4" aria-hidden="true" />
+              {item.label}
+            </Button>
+          ))}
+        </nav>
+        <div className="m-4 rounded-lg border border-white/10 bg-white/[0.06] p-4">
+          <p className="text-sm font-semibold text-white">Route readiness</p>
+          <p className="mt-1 text-xs leading-5 text-white/60">
+            Dispatch queues are prepared for the next internal shipping window.
+          </p>
+          <div className="mt-4 h-2 overflow-hidden rounded-full bg-white/10">
+            <div className="h-full w-[76%] rounded-full bg-primary" />
+          </div>
+        </div>
+      </aside>
+
+      <div className="flex min-h-screen min-w-0 flex-col">
+        <header className="sticky top-0 z-10 flex h-16 items-center justify-between gap-3 border-b bg-white/90 px-4 shadow-sm shadow-blue-950/5 backdrop-blur sm:px-6 lg:h-20">
+          <div className="flex min-w-0 items-center gap-3">
+            <Button className="lg:hidden" size="icon" type="button" variant="ghost">
+              <Menu className="size-5" aria-hidden="true" />
+              <span className="sr-only">Open navigation</span>
+            </Button>
+            <BrandLogo className="lg:hidden" showText={false} />
+            <div className="hidden min-w-[280px] items-center gap-2 rounded-lg border bg-muted/70 px-3 py-2.5 text-sm text-muted-foreground shadow-inner sm:flex lg:min-w-[380px]">
+              <Search className="size-4" aria-hidden="true" />
+              <span>Search shipments, drivers, customers</span>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <Button className="border bg-white shadow-sm" size="icon" type="button" variant="ghost">
+              <Bell className="size-5" aria-hidden="true" />
+              <span className="sr-only">Notifications</span>
+            </Button>
+            <Button
+              className="hidden border bg-white shadow-sm sm:inline-flex"
+              type="button"
+              variant="ghost"
+              onClick={onLogout}
+            >
+              <LogOut className="size-4" aria-hidden="true" />
+              Logout
+            </Button>
+            <Button
+              className="border bg-white shadow-sm sm:hidden"
+              size="icon"
+              type="button"
+              variant="ghost"
+              onClick={onLogout}
+            >
+              <LogOut className="size-5" aria-hidden="true" />
+              <span className="sr-only">Logout</span>
+            </Button>
+            <Avatar className="size-10 border shadow-sm">
+              <AvatarFallback className="bg-[#082a59] text-white">TL</AvatarFallback>
+            </Avatar>
+          </div>
+        </header>
+
+        <DashboardContent />
+      </div>
+    </div>
+  )
+}
