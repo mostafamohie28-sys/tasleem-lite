@@ -85,7 +85,29 @@ export const enSenders = {
       contact: 'Contact',
       address: 'Address',
       business: 'Business',
+      pricing: 'Pricing Strategy',
       other: 'Other',
+    },
+    pricingStrategy: {
+      options: {
+        default: 'Default',
+        pricingGroup: 'Pricing Group',
+        customPriceList: 'Custom Price List',
+      },
+      pricingGroup: {
+        label: 'Pricing Group',
+        placeholder: 'Select pricing group',
+      },
+      priceList: {
+        label: 'Price List',
+        placeholder: 'Select price list',
+      },
+      groups: {
+        bronze: 'Bronze',
+        silver: 'Silver',
+        gold: 'Gold',
+        vip: 'VIP',
+      },
     },
     fields: {
       senderCode: { label: 'Sender Code', placeholder: 'SND-1005' },

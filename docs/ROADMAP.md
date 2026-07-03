@@ -24,6 +24,7 @@ Completed UI modules:
 - Company.
 - Senders.
 - Couriers.
+- Pricing Engine.
 - Shipment Statuses.
 
 No backend, database, API, production authentication, production authorization,
@@ -54,12 +55,16 @@ The MVP priority order is:
 - Sprint 6: Shipment Status Management UI.
 - Sprint 6.5: Architecture cleanup for typed navigation, protected route
   configuration, and common translation labels.
+- Sprint 6.6: Project foundation cleanup with centralized types, mocks, and
+  constants.
+- Sprint 7: Pricing Engine foundation UI and Sender Pricing Strategy UI
+  placeholder.
 
 ## Next Sprint
 
 Status: Next
 
-- Price Lists Module UI.
+- Shipments Module UI.
 
 ## Later MVP Modules
 

@@ -15,6 +15,7 @@ export const enCommon = {
     add: 'Add',
     cancel: 'Cancel',
     delete: 'Delete',
+    duplicate: 'Duplicate',
     edit: 'Edit',
     reset: 'Reset',
     save: 'Save',
@@ -23,7 +24,10 @@ export const enCommon = {
   },
   labels: {
     demoData: 'Demo data',
+    no: 'No',
+    plannedFuture: 'Planned for future versions',
     uiOnly: 'UI only',
+    yes: 'Yes',
   },
   status: {
     active: 'Active',

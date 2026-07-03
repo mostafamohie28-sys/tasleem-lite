@@ -85,7 +85,29 @@ export const arSenders = {
       contact: 'التواصل',
       address: 'العنوان',
       business: 'الأعمال',
+      pricing: 'استراتيجية التسعير',
       other: 'أخرى',
+    },
+    pricingStrategy: {
+      options: {
+        default: 'افتراضي',
+        pricingGroup: 'مجموعة تسعير',
+        customPriceList: 'قائمة أسعار مخصصة',
+      },
+      pricingGroup: {
+        label: 'مجموعة التسعير',
+        placeholder: 'اختر مجموعة التسعير',
+      },
+      priceList: {
+        label: 'قائمة الأسعار',
+        placeholder: 'اختر قائمة الأسعار',
+      },
+      groups: {
+        bronze: 'Bronze',
+        silver: 'Silver',
+        gold: 'Gold',
+        vip: 'VIP',
+      },
     },
     fields: {
       senderCode: { label: 'كود الراسل', placeholder: 'SND-1005' },

@@ -9,6 +9,7 @@ export type ShipmentStatus = {
   englishNameKey: TranslationKey
   final: boolean
   iconKey: TranslationKey
+  id: string
   order: string
   sender: boolean
   usedInPriceList: boolean

@@ -12,6 +12,7 @@ export const enDashboard = {
     company: 'Company',
     senders: 'Senders',
     couriers: 'Couriers',
+    pricingEngine: 'Pricing Engine',
     shipmentStatuses: 'Shipment Statuses',
     placeholder: 'Placeholder',
     submissions: 'Submissions',

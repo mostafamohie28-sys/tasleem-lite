@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import { Checkbox } from '@/components/ui/checkbox'
 import { FormSection } from '@/components/shared/form-section'
 import {
@@ -12,7 +14,16 @@ import {
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 import { Textarea } from '@/components/ui/textarea'
+import { PRICING_GROUPS, PRICING_STRATEGIES } from '@/constants'
+import { priceLists } from '@/mocks'
 
 type SenderDialogProps = {
   mode: 'add' | 'edit'
@@ -41,6 +52,8 @@ const sections = [
 ] as const
 
 export function SenderDialog({ mode, onOpenChange, open, t }: SenderDialogProps) {
+  const [pricingStrategy, setPricingStrategy] = useState('default')
+
   return (
     <Dialog onOpenChange={onOpenChange} open={open}>
       <DialogContent
@@ -79,6 +92,71 @@ export function SenderDialog({ mode, onOpenChange, open, t }: SenderDialogProps)
               </div>
             </FormSection>
           ))}
+
+          <FormSection
+            separatorPlacement="afterChildren"
+            title={t('dialog.sections.pricing')}
+            variant="plain"
+          >
+            <div className="mt-3 grid gap-3">
+              {PRICING_STRATEGIES.map((strategy) => (
+                <label
+                  className="flex items-center gap-3 rounded-lg border bg-muted/40 p-3 text-sm font-medium"
+                  key={strategy}
+                >
+                  <input
+                    checked={pricingStrategy === strategy}
+                    className="size-4 accent-primary"
+                    name="sender-pricing-strategy"
+                    type="radio"
+                    value={strategy}
+                    onChange={() => setPricingStrategy(strategy)}
+                  />
+                  {t(`dialog.pricingStrategy.options.${strategy}`)}
+                </label>
+              ))}
+
+              {pricingStrategy === 'pricingGroup' ? (
+                <div className="space-y-2">
+                  <Label>{t('dialog.pricingStrategy.pricingGroup.label')}</Label>
+                  <Select defaultValue="bronze">
+                    <SelectTrigger className="h-11 w-full bg-white shadow-sm">
+                      <SelectValue
+                        placeholder={t('dialog.pricingStrategy.pricingGroup.placeholder')}
+                      />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {PRICING_GROUPS.map((group) => (
+                        <SelectItem key={group} value={group}>
+                          {t(`dialog.pricingStrategy.groups.${group}`)}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+              ) : null}
+
+              {pricingStrategy === 'customPriceList' ? (
+                <div className="space-y-2">
+                  <Label>{t('dialog.pricingStrategy.priceList.label')}</Label>
+                  <Select defaultValue="default">
+                    <SelectTrigger className="h-11 w-full bg-white shadow-sm">
+                      <SelectValue
+                        placeholder={t('dialog.pricingStrategy.priceList.placeholder')}
+                      />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {priceLists.map((priceList) => (
+                        <SelectItem key={priceList.id} value={priceList.id}>
+                          {t(`pricingEngine:${priceList.nameKey}`)}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+              ) : null}
+            </div>
+          </FormSection>
 
           <FormSection
             showSeparator={false}

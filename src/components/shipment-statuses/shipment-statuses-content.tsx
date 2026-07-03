@@ -197,12 +197,28 @@ export function ShipmentStatusesContent() {
                     </div>
                   </TableCell>
                   <TableCell>{t(status.iconKey)}</TableCell>
-                  <TableCell>{t(status.active ? 'common.yes' : 'common.no')}</TableCell>
-                  <TableCell>{t(status.final ? 'common.yes' : 'common.no')}</TableCell>
-                  <TableCell>{t(status.usedInPriceList ? 'common.yes' : 'common.no')}</TableCell>
-                  <TableCell>{t(status.employee ? 'common.yes' : 'common.no')}</TableCell>
-                  <TableCell>{t(status.courier ? 'common.yes' : 'common.no')}</TableCell>
-                  <TableCell>{t(status.sender ? 'common.yes' : 'common.no')}</TableCell>
+                  <TableCell>
+                    {t(status.active ? 'common:labels.yes' : 'common:labels.no')}
+                  </TableCell>
+                  <TableCell>
+                    {t(status.final ? 'common:labels.yes' : 'common:labels.no')}
+                  </TableCell>
+                  <TableCell>
+                    {t(
+                      status.usedInPriceList
+                        ? 'common:labels.yes'
+                        : 'common:labels.no',
+                    )}
+                  </TableCell>
+                  <TableCell>
+                    {t(status.employee ? 'common:labels.yes' : 'common:labels.no')}
+                  </TableCell>
+                  <TableCell>
+                    {t(status.courier ? 'common:labels.yes' : 'common:labels.no')}
+                  </TableCell>
+                  <TableCell>
+                    {t(status.sender ? 'common:labels.yes' : 'common:labels.no')}
+                  </TableCell>
                   <TableCell>
                     <div className="flex justify-end gap-2">
                       <Button size="sm" type="button" variant="ghost">

@@ -9,6 +9,7 @@ export const shipmentStatusStats = [
 
 export const shipmentStatuses = [
   {
+    id: 'created',
     order: '10',
     arabicNameKey: 'table.rows.created.arabicName',
     englishNameKey: 'table.rows.created.englishName',
@@ -22,6 +23,7 @@ export const shipmentStatuses = [
     sender: true,
   },
   {
+    id: 'assigned',
     order: '20',
     arabicNameKey: 'table.rows.assigned.arabicName',
     englishNameKey: 'table.rows.assigned.englishName',
@@ -35,6 +37,7 @@ export const shipmentStatuses = [
     sender: false,
   },
   {
+    id: 'delivered',
     order: '30',
     arabicNameKey: 'table.rows.delivered.arabicName',
     englishNameKey: 'table.rows.delivered.englishName',
@@ -48,6 +51,7 @@ export const shipmentStatuses = [
     sender: true,
   },
   {
+    id: 'returned',
     order: '40',
     arabicNameKey: 'table.rows.returned.arabicName',
     englishNameKey: 'table.rows.returned.englishName',

@@ -15,6 +15,7 @@ export const arCommon = {
     add: 'إضافة',
     cancel: 'إلغاء',
     delete: 'حذف',
+    duplicate: 'نسخ',
     edit: 'تعديل',
     reset: 'إعادة تعيين',
     save: 'حفظ',
@@ -23,7 +24,10 @@ export const arCommon = {
   },
   labels: {
     demoData: 'بيانات تجريبية',
+    no: 'لا',
+    plannedFuture: 'Planned for future versions',
     uiOnly: 'واجهة فقط',
+    yes: 'نعم',
   },
   status: {
     active: 'نشط',

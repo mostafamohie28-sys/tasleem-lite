@@ -69,6 +69,8 @@ Completed:
 * Centralized TypeScript types layer
 * Centralized mock data layer
 * Centralized UI constants layer
+* Pricing Engine UI foundation
+* Sender Pricing Strategy UI placeholder
 
 Not Started:
 
@@ -122,14 +124,14 @@ Future modules:
 
 ## Current Sprint
 
-Sprint 6.6:
-Project Foundation Cleanup
+Sprint 7:
+Pricing Engine Foundation UI
 
 Status:
 Completed
 
 Next Sprint:
-Price Lists Module UI
+Shipments Module UI
 
 Project Status:
 Frontend foundation approved. The app currently has a polished branded UI,
@@ -153,6 +155,9 @@ labels such as Save, Cancel, Search, Active, and Inactive into the common
 translation namespace. Sprint 6.6 added centralized `src/types`, `src/mocks`,
 and `src/constants` layers, then moved existing static Company, Senders,
 Couriers, and Shipment Statuses demo data out of UI components without changing
-routes, branding, authentication, i18n, RTL / LTR behavior, or page layouts. No
-backend, database, API, workflow engine, automation, or production business
-logic has been implemented yet.
+routes, branding, authentication, i18n, RTL / LTR behavior, or page layouts.
+Sprint 7 added the protected `/pricing-engine` Master Data module with Price
+Lists, Price List Details hierarchy, bulk action placeholders, future-ready
+pricing placeholder cards, and a Sender Pricing Strategy UI placeholder. No
+backend, database, API, pricing calculations, workflow engine, automation, or
+production business logic has been implemented yet.

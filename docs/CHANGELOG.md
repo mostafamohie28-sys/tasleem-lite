@@ -1,5 +1,46 @@
 # Tasleem Lite Changelog
 
+## Sprint 7: Pricing Engine Foundation UI
+
+### Added
+
+- Pricing Engine sidebar item under Master Data.
+- Protected `/pricing-engine` frontend route.
+- Pricing Engine module using the existing dashboard layout and shared UI
+  components.
+- Price Lists table with Name, Description, Active, Default List, Number of
+  Senders, Created Date, and Actions columns.
+- Price List demo records for Default, VIP, Amazon, and Noon.
+- Search and filter toolbar for Price Lists.
+- Add Price List dialog with disabled Save placeholder.
+- Price List Details section with governorate and area collapsible hierarchy.
+- Sender Price rows by shipment status with Notes and no Courier Price column.
+- Bulk action placeholders for Copy Prices From Area, Apply Prices To
+  Governorate, Duplicate Price List, Import Excel, and Export Excel.
+- Read-only future placeholder cards for Price Version History, Effective Date,
+  Pricing Rules, Courier Pricing, Weight Pricing, COD Pricing, and Advanced
+  Conditions.
+- Sender dialog Pricing Strategy UI with Default, Pricing Group, and Custom
+  Price List options.
+- Arabic and English translations for the Pricing Engine module and Sender
+  Pricing Strategy fields.
+
+### Changed
+
+- Extended centralized route/navigation configuration for Pricing Engine.
+- Extended price list mock data and types for the UI-only pricing foundation.
+
+### Notes
+
+- UI only.
+- No backend was added.
+- No database was added.
+- No API was added.
+- No pricing calculations were added.
+- No workflow logic was added.
+- No business logic was added.
+- No new dependencies were added.
+
 ## Sprint 6.6: Project Foundation Cleanup
 
 ### Added

@@ -3,6 +3,7 @@ import { arCompany } from '@/i18n/locales/ar/company'
 import { arCouriers } from '@/i18n/locales/ar/couriers'
 import { arDashboard } from '@/i18n/locales/ar/dashboard'
 import { arLogin } from '@/i18n/locales/ar/login'
+import { arPricingEngine } from '@/i18n/locales/ar/pricing-engine'
 import { arSenders } from '@/i18n/locales/ar/senders'
 import { arShipmentStatuses } from '@/i18n/locales/ar/shipment-statuses'
 import { enCommon } from '@/i18n/locales/en/common'
@@ -10,6 +11,7 @@ import { enCompany } from '@/i18n/locales/en/company'
 import { enCouriers } from '@/i18n/locales/en/couriers'
 import { enDashboard } from '@/i18n/locales/en/dashboard'
 import { enLogin } from '@/i18n/locales/en/login'
+import { enPricingEngine } from '@/i18n/locales/en/pricing-engine'
 import { enSenders } from '@/i18n/locales/en/senders'
 import { enShipmentStatuses } from '@/i18n/locales/en/shipment-statuses'
 
@@ -20,6 +22,7 @@ export const resources = {
     couriers: arCouriers,
     dashboard: arDashboard,
     login: arLogin,
+    pricingEngine: arPricingEngine,
     senders: arSenders,
     shipmentStatuses: arShipmentStatuses,
   },
@@ -29,6 +32,7 @@ export const resources = {
     couriers: enCouriers,
     dashboard: enDashboard,
     login: enLogin,
+    pricingEngine: enPricingEngine,
     senders: enSenders,
     shipmentStatuses: enShipmentStatuses,
   },

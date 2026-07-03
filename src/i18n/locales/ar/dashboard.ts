@@ -12,6 +12,7 @@
     company: 'الشركة',
     senders: 'الراسلون',
     couriers: 'المندوبون',
+    pricingEngine: 'محرك التسعير',
     shipmentStatuses: 'حالات الشحنات',
     placeholder: 'عنصر مؤقت',
     submissions: 'الطلبات',

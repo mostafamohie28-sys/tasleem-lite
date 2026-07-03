@@ -1,6 +1,7 @@
 import {
   BarChart3,
   Building2,
+  CircleDollarSign,
   Home,
   Send,
   SlidersHorizontal,
@@ -15,6 +16,7 @@ export type RoutePath =
   | '/company'
   | '/senders'
   | '/couriers'
+  | '/pricing-engine'
   | '/shipment-statuses'
 
 export type SidebarGroup =
@@ -85,6 +87,15 @@ export const navigationItems = [
     protected: true,
     sidebarGroup: 'masterData',
     titleKey: 'nav.couriers',
+  },
+  {
+    enabled: true,
+    icon: CircleDollarSign,
+    id: 'pricing-engine',
+    path: '/pricing-engine',
+    protected: true,
+    sidebarGroup: 'masterData',
+    titleKey: 'nav.pricingEngine',
   },
   {
     enabled: false,
