@@ -1,5 +1,35 @@
 # Tasleem Lite Changelog
 
+## Sprint 6.6: Project Foundation Cleanup
+
+### Added
+
+- Centralized `src/types` layer for reusable TypeScript types covering Company,
+  Sender, Courier, Shipment Status, Price List, Governorate, and Area.
+- Centralized `src/mocks` layer for existing static Company, Senders, Couriers,
+  and Shipment Statuses demo data.
+- Centralized `src/constants` layer for reusable UI constants such as supported
+  languages, currencies, time zones, and record statuses.
+
+### Changed
+
+- Updated Company, Senders, Couriers, and Shipment Statuses components to import
+  existing demo data from the mock layer instead of declaring it inline.
+- Kept feature components focused on rendering while preserving their existing
+  markup, styling, route behavior, authentication, and translations.
+- Updated project context documentation for the new foundation structure.
+
+### Notes
+
+- No UI or UX changes were introduced.
+- No routes were changed.
+- No new pages or features were added.
+- No backend was added.
+- No database was added.
+- No API was added.
+- No business logic was added.
+- No new dependencies were added.
+
 ## Sprint 6.5: Architecture Cleanup
 
 ### Added

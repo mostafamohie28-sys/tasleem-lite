@@ -1,0 +1,63 @@
+import type { DemoStat, ShipmentStatus } from '@/types'
+
+export const shipmentStatusStats = [
+  { labelKey: 'stats.totalStatuses', value: '14', iconKey: 'tags' },
+  { labelKey: 'stats.active', value: '12', iconKey: 'checkCircle' },
+  { labelKey: 'stats.finalStatuses', value: '4', iconKey: 'flag' },
+  { labelKey: 'stats.usedInPriceLists', value: '7', iconKey: 'palette' },
+] as const satisfies readonly DemoStat[]
+
+export const shipmentStatuses = [
+  {
+    order: '10',
+    arabicNameKey: 'table.rows.created.arabicName',
+    englishNameKey: 'table.rows.created.englishName',
+    color: '#2563EB',
+    iconKey: 'icons.package',
+    active: true,
+    final: false,
+    usedInPriceList: true,
+    employee: true,
+    courier: false,
+    sender: true,
+  },
+  {
+    order: '20',
+    arabicNameKey: 'table.rows.assigned.arabicName',
+    englishNameKey: 'table.rows.assigned.englishName',
+    color: '#F97316',
+    iconKey: 'icons.route',
+    active: true,
+    final: false,
+    usedInPriceList: false,
+    employee: true,
+    courier: true,
+    sender: false,
+  },
+  {
+    order: '30',
+    arabicNameKey: 'table.rows.delivered.arabicName',
+    englishNameKey: 'table.rows.delivered.englishName',
+    color: '#16A34A',
+    iconKey: 'icons.check',
+    active: true,
+    final: true,
+    usedInPriceList: true,
+    employee: true,
+    courier: true,
+    sender: true,
+  },
+  {
+    order: '40',
+    arabicNameKey: 'table.rows.returned.arabicName',
+    englishNameKey: 'table.rows.returned.englishName',
+    color: '#DC2626',
+    iconKey: 'icons.return',
+    active: true,
+    final: true,
+    usedInPriceList: true,
+    employee: true,
+    courier: true,
+    sender: true,
+  },
+] as const satisfies readonly ShipmentStatus[]

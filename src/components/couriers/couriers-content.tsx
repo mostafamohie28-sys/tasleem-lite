@@ -7,6 +7,7 @@ import {
   UserCheck,
   UserRoundX,
   Users,
+  type LucideIcon,
 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
@@ -34,56 +35,14 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
+import { courierStats, couriers } from '@/mocks'
 
-const stats = [
-  { labelKey: 'stats.totalCouriers', value: '64', icon: Users },
-  { labelKey: 'stats.active', value: '58', icon: UserCheck },
-  { labelKey: 'stats.inactive', value: '6', icon: UserRoundX },
-  { labelKey: 'stats.availableToday', value: '43', icon: Bike },
-]
-
-const couriers = [
-  {
-    code: 'CR-2001',
-    nameKey: 'table.rows.ahmed.name',
-    mobile: '+20 100 842 1975',
-    governorateKey: 'governorates.cairo',
-    areaKey: 'areas.nasrCity',
-    vehicleTypeKey: 'vehicleTypes.motorcycle',
-    statusKey: 'status.active',
-    status: 'active',
-  },
-  {
-    code: 'CR-2002',
-    nameKey: 'table.rows.mahmoud.name',
-    mobile: '+20 111 304 8821',
-    governorateKey: 'governorates.giza',
-    areaKey: 'areas.dokki',
-    vehicleTypeKey: 'vehicleTypes.motorcycle',
-    statusKey: 'status.active',
-    status: 'active',
-  },
-  {
-    code: 'CR-2003',
-    nameKey: 'table.rows.karim.name',
-    mobile: '+20 122 507 6140',
-    governorateKey: 'governorates.alexandria',
-    areaKey: 'areas.sidiGaber',
-    vehicleTypeKey: 'vehicleTypes.van',
-    statusKey: 'status.inactive',
-    status: 'inactive',
-  },
-  {
-    code: 'CR-2004',
-    nameKey: 'table.rows.mostafa.name',
-    mobile: '+20 155 913 2208',
-    governorateKey: 'governorates.dakahlia',
-    areaKey: 'areas.mansoura',
-    vehicleTypeKey: 'vehicleTypes.car',
-    statusKey: 'status.active',
-    status: 'active',
-  },
-]
+const statIcons = {
+  bike: Bike,
+  userCheck: UserCheck,
+  userRoundX: UserRoundX,
+  users: Users,
+} satisfies Record<string, LucideIcon>
 
 export function CouriersContent() {
   const { t } = useTranslation(['couriers', 'common'])
@@ -120,9 +79,9 @@ export function CouriersContent() {
         />
 
         <StatsGrid>
-          {stats.map((item) => (
+          {courierStats.map((item) => (
             <StatCard
-              icon={item.icon}
+              icon={statIcons[item.iconKey]}
               key={item.labelKey}
               title={t(item.labelKey)}
               value={item.value}

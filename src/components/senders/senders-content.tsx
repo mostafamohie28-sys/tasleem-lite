@@ -7,6 +7,7 @@ import {
   UserCheck,
   UserRoundX,
   Users,
+  type LucideIcon,
 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
@@ -34,52 +35,14 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
+import { senderStats, senders } from '@/mocks'
 
-const stats = [
-  { labelKey: 'stats.totalSenders', value: '128', icon: Users },
-  { labelKey: 'stats.active', value: '112', icon: UserCheck },
-  { labelKey: 'stats.inactive', value: '16', icon: UserRoundX },
-  { labelKey: 'stats.newThisMonth', value: '9', icon: Building2 },
-]
-
-const senders = [
-  {
-    code: 'SND-1001',
-    nameKey: 'table.rows.delta.name',
-    companyKey: 'table.rows.delta.company',
-    mobile: '+20 100 245 7811',
-    cityKey: 'cities.cairo',
-    statusKey: 'status.active',
-    status: 'active',
-  },
-  {
-    code: 'SND-1002',
-    nameKey: 'table.rows.nile.name',
-    companyKey: 'table.rows.nile.company',
-    mobile: '+20 111 932 4402',
-    cityKey: 'cities.giza',
-    statusKey: 'status.active',
-    status: 'active',
-  },
-  {
-    code: 'SND-1003',
-    nameKey: 'table.rows.orbit.name',
-    companyKey: 'table.rows.orbit.company',
-    mobile: '+20 122 781 5530',
-    cityKey: 'cities.alexandria',
-    statusKey: 'status.inactive',
-    status: 'inactive',
-  },
-  {
-    code: 'SND-1004',
-    nameKey: 'table.rows.madina.name',
-    companyKey: 'table.rows.madina.company',
-    mobile: '+20 155 602 1194',
-    cityKey: 'cities.mansoura',
-    statusKey: 'status.active',
-    status: 'active',
-  },
-]
+const statIcons = {
+  building: Building2,
+  userCheck: UserCheck,
+  userRoundX: UserRoundX,
+  users: Users,
+} satisfies Record<string, LucideIcon>
 
 export function SendersContent() {
   const { t } = useTranslation(['senders', 'common'])
@@ -116,9 +79,9 @@ export function SendersContent() {
         />
 
         <StatsGrid>
-          {stats.map((item) => (
+          {senderStats.map((item) => (
             <StatCard
-              icon={item.icon}
+              icon={statIcons[item.iconKey]}
               key={item.labelKey}
               title={t(item.labelKey)}
               value={item.value}

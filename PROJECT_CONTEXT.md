@@ -66,6 +66,9 @@ Completed:
 * Shipment Status Management UI module
 * Architecture cleanup with typed navigation and route configuration
 * Shared common translation labels for repeated UI actions and states
+* Centralized TypeScript types layer
+* Centralized mock data layer
+* Centralized UI constants layer
 
 Not Started:
 
@@ -119,8 +122,8 @@ Future modules:
 
 ## Current Sprint
 
-Sprint 6.5:
-Architecture Cleanup
+Sprint 6.6:
+Project Foundation Cleanup
 
 Status:
 Completed
@@ -147,5 +150,9 @@ and workflow placeholders as UI only. Sprint 6.5 centralized navigation and
 protected route metadata in a typed configuration, derives the sidebar and
 protected route checks from that single source of truth, and moved repeated
 labels such as Save, Cancel, Search, Active, and Inactive into the common
-translation namespace. No backend, database, API, workflow engine, automation,
-or production business logic has been implemented yet.
+translation namespace. Sprint 6.6 added centralized `src/types`, `src/mocks`,
+and `src/constants` layers, then moved existing static Company, Senders,
+Couriers, and Shipment Statuses demo data out of UI components without changing
+routes, branding, authentication, i18n, RTL / LTR behavior, or page layouts. No
+backend, database, API, workflow engine, automation, or production business
+logic has been implemented yet.

@@ -7,30 +7,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-
-const sections = [
-  {
-    key: 'companyInformation',
-    fields: [
-      'companyName',
-      'commercialName',
-      'taxNumber',
-      'registrationNumber',
-    ],
-  },
-  {
-    key: 'contactInformation',
-    fields: ['phone', 'mobile', 'email', 'website'],
-  },
-  {
-    key: 'address',
-    fields: ['country', 'city', 'address'],
-  },
-  {
-    key: 'businessSettings',
-    fields: ['defaultCurrency', 'defaultLanguage', 'timeZone'],
-  },
-] as const
+import { companyFormSections } from '@/mocks'
 
 export function CompanyContent() {
   const { t } = useTranslation(['company', 'common'])
@@ -51,7 +28,7 @@ export function CompanyContent() {
 
         <section className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_360px]">
           <div className="grid gap-6">
-            {sections.map((section) => (
+            {companyFormSections.map((section) => (
               <FormSection
                 description={t(`sections.${section.key}.description`)}
                 icon={Building2}

@@ -7,6 +7,7 @@ import {
   Palette,
   Plus,
   Tags,
+  type LucideIcon,
 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
@@ -34,68 +35,14 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
+import { shipmentStatuses, shipmentStatusStats } from '@/mocks'
 
-const stats = [
-  { labelKey: 'stats.totalStatuses', value: '14', icon: Tags },
-  { labelKey: 'stats.active', value: '12', icon: CheckCircle2 },
-  { labelKey: 'stats.finalStatuses', value: '4', icon: Flag },
-  { labelKey: 'stats.usedInPriceLists', value: '7', icon: Palette },
-]
-
-const statuses = [
-  {
-    order: '10',
-    arabicNameKey: 'table.rows.created.arabicName',
-    englishNameKey: 'table.rows.created.englishName',
-    color: '#2563EB',
-    iconKey: 'icons.package',
-    active: true,
-    final: false,
-    usedInPriceList: true,
-    employee: true,
-    courier: false,
-    sender: true,
-  },
-  {
-    order: '20',
-    arabicNameKey: 'table.rows.assigned.arabicName',
-    englishNameKey: 'table.rows.assigned.englishName',
-    color: '#F97316',
-    iconKey: 'icons.route',
-    active: true,
-    final: false,
-    usedInPriceList: false,
-    employee: true,
-    courier: true,
-    sender: false,
-  },
-  {
-    order: '30',
-    arabicNameKey: 'table.rows.delivered.arabicName',
-    englishNameKey: 'table.rows.delivered.englishName',
-    color: '#16A34A',
-    iconKey: 'icons.check',
-    active: true,
-    final: true,
-    usedInPriceList: true,
-    employee: true,
-    courier: true,
-    sender: true,
-  },
-  {
-    order: '40',
-    arabicNameKey: 'table.rows.returned.arabicName',
-    englishNameKey: 'table.rows.returned.englishName',
-    color: '#DC2626',
-    iconKey: 'icons.return',
-    active: true,
-    final: true,
-    usedInPriceList: true,
-    employee: true,
-    courier: true,
-    sender: true,
-  },
-]
+const statIcons = {
+  checkCircle: CheckCircle2,
+  flag: Flag,
+  palette: Palette,
+  tags: Tags,
+} satisfies Record<string, LucideIcon>
 
 export function ShipmentStatusesContent() {
   const { t } = useTranslation(['shipmentStatuses', 'common'])
@@ -132,9 +79,9 @@ export function ShipmentStatusesContent() {
         />
 
         <StatsGrid>
-          {stats.map((item) => (
+          {shipmentStatusStats.map((item) => (
             <StatCard
-              icon={item.icon}
+              icon={statIcons[item.iconKey]}
               key={item.labelKey}
               title={t(item.labelKey)}
               value={item.value}
@@ -235,7 +182,7 @@ export function ShipmentStatusesContent() {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {statuses.map((status) => (
+              {shipmentStatuses.map((status) => (
                 <TableRow key={status.order}>
                   <TableCell className="font-medium">{status.order}</TableCell>
                   <TableCell>{t(status.arabicNameKey)}</TableCell>
