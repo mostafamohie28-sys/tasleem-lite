@@ -53,14 +53,18 @@ Completed:
 * Lint passing
 * Arabic / English internationalization
 * Automatic RTL / LTR layout direction
+* Frontend-only authentication
+* Dashboard route protection
+* Logout flow
+* Project cleanup completed
 
 Not Started:
 
-* Authentication
 * Database
 * Backend
 * API
-* Business Logic
+* Production authentication
+* Business Logic beyond the current UI preview
 
 ---
 
@@ -107,7 +111,16 @@ Future modules:
 ## Current Sprint
 
 Sprint 1:
-Professional UI and Branding
+Foundation, UI, Branding, Frontend Auth, and Internationalization
 
 Status:
 Completed
+
+Next Sprint:
+Core ERP data modeling and module planning
+
+Project Status:
+Frontend foundation approved. The app currently has a polished branded UI,
+frontend-only localStorage authentication, Arabic / English translations,
+automatic RTL / LTR document direction, and cleaned project structure. No
+backend, database, API, or production business logic has been implemented yet.
