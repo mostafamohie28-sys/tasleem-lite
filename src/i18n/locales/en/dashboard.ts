@@ -12,6 +12,7 @@ export const enDashboard = {
     company: 'Company',
     senders: 'Senders',
     couriers: 'Couriers',
+    shipmentStatuses: 'Shipment Statuses',
     placeholder: 'Placeholder',
     submissions: 'Submissions',
     shipments: 'Shipments',

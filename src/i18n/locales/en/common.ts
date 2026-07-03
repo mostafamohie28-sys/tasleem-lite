@@ -11,6 +11,24 @@ export const enCommon = {
     english: 'English',
     arabic: 'العربية',
   },
+  actions: {
+    add: 'Add',
+    cancel: 'Cancel',
+    delete: 'Delete',
+    edit: 'Edit',
+    reset: 'Reset',
+    save: 'Save',
+    search: 'Search',
+    view: 'View',
+  },
+  labels: {
+    demoData: 'Demo data',
+    uiOnly: 'UI only',
+  },
+  status: {
+    active: 'Active',
+    inactive: 'Inactive',
+  },
   auth: {
     operatorAccess: 'Operator access',
     title: 'Sign in to manage deliveries',

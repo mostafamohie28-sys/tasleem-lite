@@ -6,7 +6,7 @@ import { Label } from '@/components/ui/label'
 
 type SearchToolbarProps = {
   actions?: ReactNode
-  filterColumns?: 2 | 3
+  filterColumns?: 2 | 3 | 4
   filters?: ReactNode
   search: {
     id: string
@@ -25,9 +25,11 @@ export function SearchToolbar({
     <section className="rounded-lg border bg-card p-5 shadow-sm shadow-blue-950/5">
       <div
         className={
-          filterColumns === 3
-            ? 'grid gap-4 lg:grid-cols-[minmax(260px,1fr)_repeat(3,220px)]'
-            : 'grid gap-4 lg:grid-cols-[minmax(260px,1fr)_220px_220px]'
+          filterColumns === 4
+            ? 'grid gap-4 lg:grid-cols-[minmax(260px,1fr)_repeat(4,190px)]'
+            : filterColumns === 3
+              ? 'grid gap-4 lg:grid-cols-[minmax(260px,1fr)_repeat(3,220px)]'
+              : 'grid gap-4 lg:grid-cols-[minmax(260px,1fr)_220px_220px]'
         }
       >
         <div className="space-y-2">

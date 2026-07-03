@@ -2,80 +2,90 @@
 
 ## Current Status
 
-Tasleem Lite currently has a completed frontend foundation:
+Tasleem Lite is an MVP for daily use inside a real shipping company. The
+current implementation is frontend-only and focuses on getting the operational
+ERP workflow ready before postponed platform features.
+
+Completed foundation:
 
 - Premium branded login page.
 - ERP-style dashboard shell.
 - Sidebar and top navigation.
 - Frontend-only localStorage authentication.
-- Protected dashboard route.
+- Protected frontend routes.
 - Arabic and English multilingual support.
 - Automatic RTL for Arabic and LTR for English.
+- Shared UI design system components.
+- Typed navigation and protected route configuration.
 - Cleaned project structure.
 
-No backend, database, API, or production business logic has been implemented.
+Completed UI modules:
 
-## Phase 1: Frontend Foundation
+- Company.
+- Senders.
+- Couriers.
+- Shipment Statuses.
 
-Status: Completed
+No backend, database, API, production authentication, production authorization,
+or production business logic has been implemented.
 
-- React, Vite, and TypeScript setup.
-- Tailwind CSS and shadcn/ui setup.
-- Tasleem branding applied.
-- Login UI completed.
-- Dashboard UI completed.
-- Frontend-only demo authentication completed.
-- Internationalization completed.
-- Project cleanup completed.
+## MVP Delivery Priority
 
-## Phase 2: Planning and Data Model
+The MVP priority order is:
+
+1. Senders.
+2. Couriers.
+3. Price Lists.
+4. Shipments.
+5. Distribution.
+6. Shipment Status Updates.
+7. Courier Settlement.
+8. Treasury.
+9. Sender Settlement.
+
+## Completed Sprints
+
+- Sprint 1: Frontend foundation, branding, authentication preview, dashboard,
+  and multilingual support.
+- Sprint 2: Company module UI.
+- Sprint 3: Master Data foundation and Senders module UI.
+- Sprint 4: Shared design system foundation.
+- Sprint 5: Couriers module UI.
+- Sprint 6: Shipment Status Management UI.
+- Sprint 6.5: Architecture cleanup for typed navigation, protected route
+  configuration, and common translation labels.
+
+## Next Sprint
 
 Status: Next
 
-- Define ERP modules.
-- Define entities and relationships.
-- Finalize database design.
-- Define business workflows.
-- Define role and permission model.
-- Define backend/API requirements.
+- Price Lists Module UI.
 
-## Phase 3: Core ERP Modules
+## Later MVP Modules
 
 Status: Not started
 
-Planned modules:
-
-- Users.
-- Roles and permissions.
-- Customers.
-- Senders.
-- Receivers.
 - Shipments.
-- Shipment tracking.
-- Delivery representatives.
-- Branches.
+- Distribution.
+- Shipment Status Updates.
+- Courier Settlement.
+- Treasury.
+- Sender Settlement.
 
-## Phase 4: Operations and Finance
+## Post-MVP Features
 
-Status: Not started
-
-Planned modules:
-
-- Cash collection.
-- Expenses.
-- Delivery settlement.
-- Reports.
-- Notifications.
-- Printing.
-
-## Phase 5: Production Readiness
-
-Status: Not started
+Status: Postponed until the operational MVP is usable
 
 - Backend integration.
 - Database integration.
 - Production authentication.
-- Authorization and permissions.
-- Validation and error handling.
+- Role and permission management.
+- API integrations.
+- Pickup workflow.
+- Mobile app.
+- Workflow designer.
+- Business rules engine.
+- SaaS features.
+- Advanced automation.
 - Testing strategy.
 - Deployment preparation.

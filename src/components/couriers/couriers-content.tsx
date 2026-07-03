@@ -86,7 +86,7 @@ const couriers = [
 ]
 
 export function CouriersContent() {
-  const { t } = useTranslation('couriers')
+  const { t } = useTranslation(['couriers', 'common'])
   const [dialogMode, setDialogMode] = useState<'add' | 'edit'>('add')
   const [dialogOpen, setDialogOpen] = useState(false)
 
@@ -101,7 +101,7 @@ export function CouriersContent() {
         <PageHeader
           badge={
             <Badge className="bg-primary/10 text-primary hover:bg-primary/10">
-              {t('header.badge')}
+              {t('common:labels.uiOnly')}
             </Badge>
           }
           description={t('header.description')}
@@ -172,8 +172,8 @@ export function CouriersContent() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="all">{t('filters.status.all')}</SelectItem>
-                    <SelectItem value="active">{t('status.active')}</SelectItem>
-                    <SelectItem value="inactive">{t('status.inactive')}</SelectItem>
+                    <SelectItem value="active">{t('common:status.active')}</SelectItem>
+                    <SelectItem value="inactive">{t('common:status.inactive')}</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -181,7 +181,7 @@ export function CouriersContent() {
           }
           search={{
             id: 'courier-search',
-            label: t('filters.search.label'),
+            label: t('common:actions.search'),
             placeholder: t('filters.search.placeholder'),
           }}
         />
@@ -189,7 +189,7 @@ export function CouriersContent() {
         <DataTableContainer
           badge={
             <Badge className="w-fit bg-primary/10 text-primary hover:bg-primary/10">
-              {t('table.badge')}
+              {t('common:labels.demoData')}
             </Badge>
           }
           description={t('table.description')}
@@ -227,14 +227,14 @@ export function CouriersContent() {
                           : 'bg-slate-100 text-slate-600 hover:bg-slate-100'
                       }
                     >
-                      {t(courier.statusKey)}
+                      {t(courier.status === 'active' ? 'common:status.active' : 'common:status.inactive')}
                     </Badge>
                   </TableCell>
                   <TableCell>
                     <div className="flex justify-end gap-2">
                       <Button size="sm" type="button" variant="ghost">
                         <Eye className="size-4" aria-hidden="true" />
-                        {t('table.actions.view')}
+                        {t('common:actions.view')}
                       </Button>
                       <Button
                         size="sm"
@@ -243,7 +243,7 @@ export function CouriersContent() {
                         onClick={() => openDialog('edit')}
                       >
                         <Edit className="size-4" aria-hidden="true" />
-                        {t('table.actions.edit')}
+                        {t('common:actions.edit')}
                       </Button>
                     </div>
                   </TableCell>

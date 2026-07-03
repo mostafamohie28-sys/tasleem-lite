@@ -114,11 +114,11 @@ export function CourierDialog({
         <DialogFooter>
           <DialogClose asChild>
             <Button type="button" variant="outline">
-              {t('dialog.actions.cancel')}
+              {t('common:actions.cancel')}
             </Button>
           </DialogClose>
           <Button disabled type="button">
-            {t('dialog.actions.save')}
+            {t('common:actions.save')}
           </Button>
         </DialogFooter>
       </DialogContent>

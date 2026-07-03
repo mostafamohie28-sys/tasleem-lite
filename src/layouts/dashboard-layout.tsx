@@ -1,19 +1,5 @@
 import type React from 'react'
-import {
-  Bell,
-  BarChart3,
-  Building2,
-  CircleDashed,
-  Home,
-  Menu,
-  Search,
-  Settings,
-  Send,
-  Truck,
-  Users,
-  LogOut,
-  Wallet,
-} from 'lucide-react'
+import { Bell, CircleDashed, LogOut, Menu, Search } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
 import { BrandLogo } from '@/components/brand/brand-logo'
@@ -22,37 +8,7 @@ import { LanguageSwitcher } from '@/components/language/language-switcher'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
-
-const navGroups = [
-  {
-    labelKey: 'groups.dashboard',
-    items: [{ labelKey: 'nav.dashboard', path: '/dashboard', icon: Home }],
-  },
-  {
-    labelKey: 'groups.masterData',
-    items: [
-      { labelKey: 'nav.company', path: '/company', icon: Building2 },
-      { labelKey: 'nav.senders', path: '/senders', icon: Users },
-      { labelKey: 'nav.couriers', path: '/couriers', icon: Truck },
-    ],
-  },
-  {
-    labelKey: 'groups.operations',
-    items: [{ labelKey: 'nav.placeholder', icon: Send }],
-  },
-  {
-    labelKey: 'groups.accounting',
-    items: [{ labelKey: 'nav.placeholder', icon: Wallet }],
-  },
-  {
-    labelKey: 'groups.reports',
-    items: [{ labelKey: 'nav.placeholder', icon: BarChart3 }],
-  },
-  {
-    labelKey: 'groups.settings',
-    items: [{ labelKey: 'nav.placeholder', icon: Settings }],
-  },
-]
+import { sidebarNavigation } from '@/config/navigation'
 
 type DashboardLayoutProps = {
   children?: React.ReactNode
@@ -80,21 +36,21 @@ export function DashboardLayout({
         </div>
         <Separator />
         <nav className="flex-1 space-y-5 overflow-y-auto p-4">
-          {navGroups.map((group) => (
+          {sidebarNavigation.map((group) => (
             <div className="space-y-1.5" key={group.labelKey}>
               <p className="px-2 text-xs font-semibold uppercase tracking-[0.14em] text-white/42">
                 {t(`dashboard:${group.labelKey}`)}
               </p>
               {group.items.map((item) => {
-                const isPlaceholder = !('path' in item)
+                const isPlaceholder = !item.enabled || !item.path
 
                 return (
                   <Button
                     className="h-10 w-full justify-start gap-3 text-white/78 hover:bg-white/10 hover:text-white data-[variant=secondary]:bg-primary data-[variant=secondary]:text-primary-foreground data-[variant=secondary]:shadow-lg data-[variant=secondary]:shadow-orange-500/20 disabled:text-white/35"
                     disabled={isPlaceholder}
-                    key={`${group.labelKey}-${item.labelKey}`}
+                    key={item.id}
                     onClick={() => {
-                      if (!isPlaceholder) {
+                      if (!isPlaceholder && item.path) {
                         onNavigate(item.path)
                       }
                     }}
@@ -105,10 +61,10 @@ export function DashboardLayout({
                     {isPlaceholder ? (
                       <>
                         <CircleDashed className="size-3 text-white/35" aria-hidden="true" />
-                        {t(`dashboard:${item.labelKey}`)}
+                        {t(`dashboard:${item.titleKey}`)}
                       </>
                     ) : (
-                      t(`dashboard:${item.labelKey}`)
+                      t(`dashboard:${item.titleKey}`)
                     )}
                   </Button>
                 )

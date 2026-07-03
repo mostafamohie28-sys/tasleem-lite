@@ -1,5 +1,60 @@
 # Tasleem Lite Changelog
 
+## Sprint 6.5: Architecture Cleanup
+
+### Added
+
+- Typed navigation configuration as the single source of truth for route path,
+  translation key, icon, sidebar group, protected state, and enabled state.
+- Derived sidebar navigation from the shared navigation configuration.
+- Derived protected route checks from the shared navigation configuration.
+- Shared common translation labels for repeated UI actions and states, including
+  Save, Cancel, Edit, View, Search, Reset, Active, Inactive, UI only, and Demo data.
+
+### Changed
+
+- Removed duplicated sidebar navigation definitions from the dashboard layout.
+- Updated protected route rendering to use the centralized route configuration.
+- Reused common translation keys in Company, Senders, Couriers, and Shipment
+  Statuses where wording was already shared.
+- Refreshed project documentation to match the current MVP progress.
+
+### Notes
+
+- No UI or UX changes were introduced.
+- No new pages or features were added.
+- No backend was added.
+- No database was added.
+- No API was added.
+- No business logic was added.
+- No new dependencies were added.
+
+## Sprint 6: Shipment Status Management UI
+
+### Added
+
+- Shipment Statuses sidebar item under Settings.
+- Protected `/shipment-statuses` frontend route.
+- Shipment Statuses page using the shared Sprint 4 design system components.
+- Page header with Add Status action.
+- Statistics cards for Total Statuses, Active, Final Statuses, and Used In Price Lists.
+- Search toolbar with Search, Active / Inactive, Final / Non Final, Used In Price List, and Visible To controls.
+- Statuses table with Order, Arabic Name, English Name, Color, Icon Placeholder, Active, Final, Used In Price List, Employee, Courier, Sender, and Actions columns.
+- View and Edit action buttons in the Statuses table.
+- Add / Edit Status dialog with Basic Information, Appearance, Visibility, Behavior, and Future sections.
+- Read-only future placeholder cards for Business Rules, Workflow, and Allowed Next Statuses.
+- Arabic and English translations for the Shipment Statuses module and Settings sidebar item.
+
+### Notes
+
+- UI only.
+- No backend was added.
+- No database was added.
+- No API was added.
+- No business logic was added.
+- No workflow engine was implemented.
+- No automation was implemented.
+
 ## Sprint 5: Couriers Module UI
 
 ### Added

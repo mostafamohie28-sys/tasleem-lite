@@ -33,7 +33,7 @@ const sections = [
 ] as const
 
 export function CompanyContent() {
-  const { t } = useTranslation('company')
+  const { t } = useTranslation(['company', 'common'])
 
   return (
     <main className="flex-1 overflow-auto bg-[linear-gradient(180deg,#f5f8fc_0%,#eef4fb_100%)] p-4 sm:p-6 lg:p-8">
@@ -43,7 +43,7 @@ export function CompanyContent() {
           label={t('header.label')}
           secondaryAction={
             <Badge className="w-fit bg-primary/10 text-primary hover:bg-primary/10">
-              {t('header.badge')}
+              {t('common:labels.uiOnly')}
             </Badge>
           }
           title={t('header.title')}
@@ -125,14 +125,14 @@ export function CompanyContent() {
               </p>
               <div className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-1">
                 <Button disabled type="button">
-                  {t('actions.save')}
+                  {t('common:actions.save')}
                 </Button>
                 <Button
                   className="border-white/20 bg-white/10 text-white hover:bg-white/15 hover:text-white"
                   type="button"
                   variant="outline"
                 >
-                  {t('actions.reset')}
+                  {t('common:actions.reset')}
                 </Button>
               </div>
             </article>

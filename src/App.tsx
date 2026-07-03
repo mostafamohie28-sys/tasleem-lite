@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -5,6 +6,8 @@ import { CompanyPreview } from '@/app/company-preview'
 import { CouriersPreview } from '@/app/couriers-preview'
 import { DashboardPreview } from '@/app/dashboard-preview'
 import { SendersPreview } from '@/app/senders-preview'
+import { ShipmentStatusesPreview } from '@/app/shipment-statuses-preview'
+import { isProtectedRoutePath, type RoutePath } from '@/config/navigation'
 import { getLanguageDirection } from '@/i18n'
 import {
   isAuthenticated,
@@ -13,7 +16,18 @@ import {
 } from '@/lib/auth'
 import { LoginPage } from '@/pages/login-page'
 
-const protectedPaths = ['/dashboard', '/company', '/senders', '/couriers']
+type ProtectedRouteProps = {
+  onLogout: () => void
+  onNavigate: (path: string) => void
+}
+
+const protectedRouteRenderers = {
+  '/dashboard': (props) => <DashboardPreview {...props} />,
+  '/company': (props) => <CompanyPreview {...props} />,
+  '/senders': (props) => <SendersPreview {...props} />,
+  '/couriers': (props) => <CouriersPreview {...props} />,
+  '/shipment-statuses': (props) => <ShipmentStatusesPreview {...props} />,
+} satisfies Record<RoutePath, (props: ProtectedRouteProps) => ReactNode>
 
 function App() {
   const { i18n } = useTranslation()
@@ -21,7 +35,7 @@ function App() {
   const [currentPath, setCurrentPath] = useState(() => {
     const path = window.location.pathname
 
-    if (protectedPaths.includes(path) && !isAuthenticated()) {
+    if (isProtectedRoutePath(path) && !isAuthenticated()) {
       window.history.replaceState(null, '', '/')
       return '/'
     }
@@ -34,7 +48,7 @@ function App() {
       const loggedIn = isAuthenticated()
       const path = window.location.pathname
 
-      if (protectedPaths.includes(path) && !loggedIn) {
+      if (isProtectedRoutePath(path) && !loggedIn) {
         window.history.replaceState(null, '', '/')
         setCurrentPath('/')
         setAuthenticated(false)
@@ -78,20 +92,13 @@ function App() {
     navigate('/')
   }
 
-  if (currentPath === '/dashboard' && authenticated) {
-    return <DashboardPreview onLogout={handleLogout} onNavigate={navigate} />
-  }
+  if (authenticated && isProtectedRoutePath(currentPath)) {
+    const renderProtectedRoute = protectedRouteRenderers[currentPath]
 
-  if (currentPath === '/company' && authenticated) {
-    return <CompanyPreview onLogout={handleLogout} onNavigate={navigate} />
-  }
-
-  if (currentPath === '/senders' && authenticated) {
-    return <SendersPreview onLogout={handleLogout} onNavigate={navigate} />
-  }
-
-  if (currentPath === '/couriers' && authenticated) {
-    return <CouriersPreview onLogout={handleLogout} onNavigate={navigate} />
+    return renderProtectedRoute({
+      onLogout: handleLogout,
+      onNavigate: navigate,
+    })
   }
 
   return <LoginPage onLogin={handleLogin} />

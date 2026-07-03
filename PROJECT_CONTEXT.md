@@ -63,6 +63,9 @@ Completed:
 * Senders UI module
 * Tasleem shared design system foundation
 * Couriers UI module
+* Shipment Status Management UI module
+* Architecture cleanup with typed navigation and route configuration
+* Shared common translation labels for repeated UI actions and states
 
 Not Started:
 
@@ -116,8 +119,8 @@ Future modules:
 
 ## Current Sprint
 
-Sprint 5:
-Couriers Module UI
+Sprint 6.5:
+Architecture Cleanup
 
 Status:
 Completed
@@ -138,5 +141,11 @@ empty states, and form sections, then refactored Company and Senders to use
 them without redesigning the approved UI. Sprint 5 added the protected
 `/couriers` Master Data module using the shared design system, with demo
 statistics, search and filters, a courier table, and Add / Edit Courier dialog
-placeholders. No backend, database, API, or production business logic has been
-implemented yet.
+placeholders. Sprint 6 added the protected `/shipment-statuses` Settings
+module for configuring shipment status visibility, appearance, pricing flags,
+and workflow placeholders as UI only. Sprint 6.5 centralized navigation and
+protected route metadata in a typed configuration, derives the sidebar and
+protected route checks from that single source of truth, and moved repeated
+labels such as Save, Cancel, Search, Active, and Inactive into the common
+translation namespace. No backend, database, API, workflow engine, automation,
+or production business logic has been implemented yet.

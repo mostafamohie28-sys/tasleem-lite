@@ -11,6 +11,24 @@ export const arCommon = {
     english: 'English',
     arabic: 'العربية',
   },
+  actions: {
+    add: 'إضافة',
+    cancel: 'إلغاء',
+    delete: 'حذف',
+    edit: 'تعديل',
+    reset: 'إعادة تعيين',
+    save: 'حفظ',
+    search: 'بحث',
+    view: 'عرض',
+  },
+  labels: {
+    demoData: 'بيانات تجريبية',
+    uiOnly: 'واجهة فقط',
+  },
+  status: {
+    active: 'نشط',
+    inactive: 'غير نشط',
+  },
   auth: {
     operatorAccess: 'دخول المشغل',
     title: 'تسجيل الدخول لإدارة التوصيل',
