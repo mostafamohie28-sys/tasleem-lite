@@ -59,6 +59,10 @@ Completed:
 * Project cleanup completed
 * Company Profile UI module
 * Company Settings UI module
+* Master Data sidebar foundation
+* Senders UI module
+* Tasleem shared design system foundation
+* Couriers UI module
 
 Not Started:
 
@@ -112,18 +116,27 @@ Future modules:
 
 ## Current Sprint
 
-Sprint 2:
-Company Profile and Company Settings UI
+Sprint 5:
+Couriers Module UI
 
 Status:
 Completed
 
 Next Sprint:
-Core ERP data modeling and module planning
+Price Lists Module UI
 
 Project Status:
 Frontend foundation approved. The app currently has a polished branded UI,
 frontend-only localStorage authentication, Arabic / English translations,
 automatic RTL / LTR document direction, cleaned project structure, and a
-frontend-only Company module UI. No backend, database, API, or production
-business logic has been implemented yet.
+frontend-only Company module UI. Sprint 3 added the grouped ERP sidebar
+foundation for Master Data, Operations, Accounting, Reports, and Settings,
+plus a protected `/senders` UI module with demo statistics, filters, table,
+and Add / Edit Sender dialog placeholders. Sprint 4 added reusable shared UI
+foundations for page headers, statistics, search toolbars, data table wrappers,
+empty states, and form sections, then refactored Company and Senders to use
+them without redesigning the approved UI. Sprint 5 added the protected
+`/couriers` Master Data module using the shared design system, with demo
+statistics, search and filters, a courier table, and Add / Edit Courier dialog
+placeholders. No backend, database, API, or production business logic has been
+implemented yet.

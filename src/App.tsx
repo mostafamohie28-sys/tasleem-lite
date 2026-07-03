@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { CompanyPreview } from '@/app/company-preview'
+import { CouriersPreview } from '@/app/couriers-preview'
 import { DashboardPreview } from '@/app/dashboard-preview'
+import { SendersPreview } from '@/app/senders-preview'
 import { getLanguageDirection } from '@/i18n'
 import {
   isAuthenticated,
@@ -11,7 +13,7 @@ import {
 } from '@/lib/auth'
 import { LoginPage } from '@/pages/login-page'
 
-const protectedPaths = ['/dashboard', '/company']
+const protectedPaths = ['/dashboard', '/company', '/senders', '/couriers']
 
 function App() {
   const { i18n } = useTranslation()
@@ -82,6 +84,14 @@ function App() {
 
   if (currentPath === '/company' && authenticated) {
     return <CompanyPreview onLogout={handleLogout} onNavigate={navigate} />
+  }
+
+  if (currentPath === '/senders' && authenticated) {
+    return <SendersPreview onLogout={handleLogout} onNavigate={navigate} />
+  }
+
+  if (currentPath === '/couriers' && authenticated) {
+    return <CouriersPreview onLogout={handleLogout} onNavigate={navigate} />
   }
 
   return <LoginPage onLogin={handleLogin} />

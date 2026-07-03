@@ -1,11 +1,12 @@
 import { Building2, Palette, Upload } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
+import { FormSection } from '@/components/shared/form-section'
+import { PageHeader } from '@/components/shared/page-header'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { Separator } from '@/components/ui/separator'
 
 const sections = [
   {
@@ -37,46 +38,26 @@ export function CompanyContent() {
   return (
     <main className="flex-1 overflow-auto bg-[linear-gradient(180deg,#f5f8fc_0%,#eef4fb_100%)] p-4 sm:p-6 lg:p-8">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-6">
-        <section className="flex flex-col justify-between gap-4 rounded-lg border bg-white p-5 shadow-sm shadow-blue-950/5 sm:flex-row sm:items-end">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary">
-              {t('header.label')}
-            </p>
-            <h1 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
-              {t('header.title')}
-            </h1>
-            <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">
-              {t('header.description')}
-            </p>
-          </div>
-          <Badge className="w-fit bg-primary/10 text-primary hover:bg-primary/10">
-            {t('header.badge')}
-          </Badge>
-        </section>
+        <PageHeader
+          description={t('header.description')}
+          label={t('header.label')}
+          secondaryAction={
+            <Badge className="w-fit bg-primary/10 text-primary hover:bg-primary/10">
+              {t('header.badge')}
+            </Badge>
+          }
+          title={t('header.title')}
+        />
 
         <section className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_360px]">
           <div className="grid gap-6">
             {sections.map((section) => (
-              <article
-                className="rounded-lg border bg-card p-5 shadow-sm shadow-blue-950/5"
+              <FormSection
+                description={t(`sections.${section.key}.description`)}
+                icon={Building2}
                 key={section.key}
+                title={t(`sections.${section.key}.title`)}
               >
-                <div className="flex items-center gap-3">
-                  <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                    <Building2 className="size-5" aria-hidden="true" />
-                  </div>
-                  <div>
-                    <h2 className="text-base font-semibold">
-                      {t(`sections.${section.key}.title`)}
-                    </h2>
-                    <p className="mt-1 text-sm text-muted-foreground">
-                      {t(`sections.${section.key}.description`)}
-                    </p>
-                  </div>
-                </div>
-
-                <Separator className="my-5" />
-
                 <div className="grid gap-4 md:grid-cols-2">
                   {section.fields.map((field) => (
                     <div className="space-y-2" key={field}>
@@ -90,28 +71,16 @@ export function CompanyContent() {
                     </div>
                   ))}
                 </div>
-              </article>
+              </FormSection>
             ))}
           </div>
 
           <aside className="grid h-fit gap-6">
-            <article className="rounded-lg border bg-card p-5 shadow-sm shadow-blue-950/5">
-              <div className="flex items-center gap-3">
-                <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                  <Palette className="size-5" aria-hidden="true" />
-                </div>
-                <div>
-                  <h2 className="text-base font-semibold">
-                    {t('sections.branding.title')}
-                  </h2>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {t('sections.branding.description')}
-                  </p>
-                </div>
-              </div>
-
-              <Separator className="my-5" />
-
+            <FormSection
+              description={t('sections.branding.description')}
+              icon={Palette}
+              title={t('sections.branding.title')}
+            >
               <div className="space-y-5">
                 <div className="space-y-2">
                   <Label>{t('branding.logo.label')}</Label>
@@ -147,7 +116,7 @@ export function CompanyContent() {
                   </div>
                 </div>
               </div>
-            </article>
+            </FormSection>
 
             <article className="rounded-lg border bg-[#082a59] p-5 text-white shadow-xl shadow-blue-950/15">
               <h2 className="text-base font-semibold">{t('actions.title')}</h2>

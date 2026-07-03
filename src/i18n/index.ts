@@ -12,7 +12,7 @@ i18n.use(initReactI18next).init({
   lng: 'ar',
   fallbackLng: 'ar',
   defaultNS: 'common',
-  ns: ['common', 'login', 'dashboard', 'company'],
+  ns: ['common', 'login', 'dashboard', 'company', 'senders', 'couriers'],
   interpolation: {
     escapeValue: false,
   },

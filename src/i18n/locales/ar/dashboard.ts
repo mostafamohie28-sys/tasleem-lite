@@ -1,7 +1,18 @@
 ﻿export const arDashboard = {
+  groups: {
+    dashboard: 'لوحة التحكم',
+    masterData: 'البيانات الأساسية',
+    operations: 'التشغيل',
+    accounting: 'الحسابات',
+    reports: 'التقارير',
+    settings: 'الإعدادات',
+  },
   nav: {
     dashboard: 'لوحة التحكم',
     company: 'الشركة',
+    senders: 'الراسلون',
+    couriers: 'المندوبون',
+    placeholder: 'عنصر مؤقت',
     submissions: 'الطلبات',
     shipments: 'الشحنات',
     drivers: 'المندوبون',
@@ -58,4 +69,5 @@
     openExceptions: 'الاستثناءات المفتوحة',
   },
 }
+
 

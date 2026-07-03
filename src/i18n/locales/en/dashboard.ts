@@ -1,7 +1,18 @@
 export const enDashboard = {
+  groups: {
+    dashboard: 'Dashboard',
+    masterData: 'Master Data',
+    operations: 'Operations',
+    accounting: 'Accounting',
+    reports: 'Reports',
+    settings: 'Settings',
+  },
   nav: {
     dashboard: 'Dashboard',
     company: 'Company',
+    senders: 'Senders',
+    couriers: 'Couriers',
+    placeholder: 'Placeholder',
     submissions: 'Submissions',
     shipments: 'Shipments',
     drivers: 'Drivers',
