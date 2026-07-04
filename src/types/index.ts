@@ -9,4 +9,11 @@ export type {
   PriceListStatusPrice,
 } from '@/types/price-list'
 export type { Sender } from '@/types/sender'
+export type {
+  Shipment,
+  ShipmentAddress,
+  ShipmentAttachment,
+  ShipmentContact,
+  ShipmentTimelineEvent,
+} from '@/types/shipment'
 export type { ShipmentStatus } from '@/types/shipment-status'

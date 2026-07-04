@@ -7,6 +7,7 @@ import { CouriersPreview } from '@/app/couriers-preview'
 import { DashboardPreview } from '@/app/dashboard-preview'
 import { PricingEnginePreview } from '@/app/pricing-engine-preview'
 import { SendersPreview } from '@/app/senders-preview'
+import { ShipmentsPreview } from '@/app/shipments-preview'
 import { ShipmentStatusesPreview } from '@/app/shipment-statuses-preview'
 import { isProtectedRoutePath, type RoutePath } from '@/config/navigation'
 import { getLanguageDirection } from '@/i18n'
@@ -28,6 +29,7 @@ const protectedRouteRenderers = {
   '/senders': (props) => <SendersPreview {...props} />,
   '/couriers': (props) => <CouriersPreview {...props} />,
   '/pricing-engine': (props) => <PricingEnginePreview {...props} />,
+  '/shipments': (props) => <ShipmentsPreview {...props} />,
   '/shipment-statuses': (props) => <ShipmentStatusesPreview {...props} />,
 } satisfies Record<RoutePath, (props: ProtectedRouteProps) => ReactNode>
 

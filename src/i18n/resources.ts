@@ -5,6 +5,7 @@ import { arDashboard } from '@/i18n/locales/ar/dashboard'
 import { arLogin } from '@/i18n/locales/ar/login'
 import { arPricingEngine } from '@/i18n/locales/ar/pricing-engine'
 import { arSenders } from '@/i18n/locales/ar/senders'
+import { arShipments } from '@/i18n/locales/ar/shipments'
 import { arShipmentStatuses } from '@/i18n/locales/ar/shipment-statuses'
 import { enCommon } from '@/i18n/locales/en/common'
 import { enCompany } from '@/i18n/locales/en/company'
@@ -13,6 +14,7 @@ import { enDashboard } from '@/i18n/locales/en/dashboard'
 import { enLogin } from '@/i18n/locales/en/login'
 import { enPricingEngine } from '@/i18n/locales/en/pricing-engine'
 import { enSenders } from '@/i18n/locales/en/senders'
+import { enShipments } from '@/i18n/locales/en/shipments'
 import { enShipmentStatuses } from '@/i18n/locales/en/shipment-statuses'
 
 export const resources = {
@@ -24,6 +26,7 @@ export const resources = {
     login: arLogin,
     pricingEngine: arPricingEngine,
     senders: arSenders,
+    shipments: arShipments,
     shipmentStatuses: arShipmentStatuses,
   },
   en: {
@@ -34,6 +37,7 @@ export const resources = {
     login: enLogin,
     pricingEngine: enPricingEngine,
     senders: enSenders,
+    shipments: enShipments,
     shipmentStatuses: enShipmentStatuses,
   },
 } as const

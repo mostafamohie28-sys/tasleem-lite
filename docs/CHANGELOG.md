@@ -1,5 +1,39 @@
 # Tasleem Lite Changelog
 
+## Sprint 8.0: Shipments Architecture Foundation UI
+
+### Added
+
+- Shipments sidebar item under Operations.
+- Protected `/shipments` frontend route.
+- Split Shipments module components for content, table, filters, statistics,
+  dialog, details sheet, and timeline.
+- Shared Shipment TypeScript types for shipment records, addresses, contacts,
+  timeline events, and attachments.
+- Static Egyptian shipment mock data under `src/mocks/shipments.ts`.
+- Shipments page header, statistics cards, search/filter toolbar, ERP-style
+  shipments table, and empty-state support.
+- Add Shipment dialog with General Information, Sender, Customer, Address,
+  Shipment Information, COD, and Notes sections.
+- Read-only shipment details sheet with summary, sender, customer, address,
+  shipment information, COD, timeline, and attachments placeholder areas.
+- Reusable static Shipment Timeline component.
+- Arabic and English translations for the Shipments module.
+
+### Notes
+
+- UI architecture only.
+- No backend was added.
+- No database was added.
+- No API was added.
+- No distribution logic was added.
+- No courier settlement was added.
+- No sender settlement was added.
+- No treasury logic was added.
+- No pricing calculations were added.
+- No workflow engine was added.
+- No business logic was added.
+
 ## Sprint 7: Pricing Engine Foundation UI
 
 ### Added

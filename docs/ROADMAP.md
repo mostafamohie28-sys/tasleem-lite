@@ -25,6 +25,7 @@ Completed UI modules:
 - Senders.
 - Couriers.
 - Pricing Engine.
+- Shipments.
 - Shipment Statuses.
 
 No backend, database, API, production authentication, production authorization,
@@ -59,18 +60,18 @@ The MVP priority order is:
   constants.
 - Sprint 7: Pricing Engine foundation UI and Sender Pricing Strategy UI
   placeholder.
+- Sprint 8.0: Shipments Architecture Foundation UI.
 
 ## Next Sprint
 
 Status: Next
 
-- Shipments Module UI.
+- Shipments Operational Workflow UI.
 
 ## Later MVP Modules
 
 Status: Not started
 
-- Shipments.
 - Distribution.
 - Shipment Status Updates.
 - Courier Settlement.

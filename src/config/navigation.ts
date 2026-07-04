@@ -17,6 +17,7 @@ export type RoutePath =
   | '/senders'
   | '/couriers'
   | '/pricing-engine'
+  | '/shipments'
   | '/shipment-statuses'
 
 export type SidebarGroup =
@@ -98,12 +99,13 @@ export const navigationItems = [
     titleKey: 'nav.pricingEngine',
   },
   {
-    enabled: false,
+    enabled: true,
     icon: Send,
-    id: 'operations-placeholder',
+    id: 'shipments',
+    path: '/shipments',
     protected: true,
     sidebarGroup: 'operations',
-    titleKey: 'nav.placeholder',
+    titleKey: 'nav.shipments',
   },
   {
     enabled: false,

@@ -71,6 +71,7 @@ Completed:
 * Centralized UI constants layer
 * Pricing Engine UI foundation
 * Sender Pricing Strategy UI placeholder
+* Shipments Architecture Foundation UI
 
 Not Started:
 
@@ -124,14 +125,14 @@ Future modules:
 
 ## Current Sprint
 
-Sprint 7:
-Pricing Engine Foundation UI
+Sprint 8.0:
+Shipments Architecture Foundation UI
 
 Status:
 Completed
 
 Next Sprint:
-Shipments Module UI
+Shipments Operational Workflow UI
 
 Project Status:
 Frontend foundation approved. The app currently has a polished branded UI,
@@ -158,6 +159,10 @@ Couriers, and Shipment Statuses demo data out of UI components without changing
 routes, branding, authentication, i18n, RTL / LTR behavior, or page layouts.
 Sprint 7 added the protected `/pricing-engine` Master Data module with Price
 Lists, Price List Details hierarchy, bulk action placeholders, future-ready
-pricing placeholder cards, and a Sender Pricing Strategy UI placeholder. No
-backend, database, API, pricing calculations, workflow engine, automation, or
-production business logic has been implemented yet.
+pricing placeholder cards, and a Sender Pricing Strategy UI placeholder. Sprint
+8.0 added the protected `/shipments` Operations module foundation with split
+Shipment components, static Egyptian demo shipment data, a shipment dialog,
+read-only details sheet, timeline component, table, filters, and statistics. No
+backend, database, API, pricing calculations, distribution, settlement,
+treasury, workflow engine, automation, or production business logic has been
+implemented yet.
